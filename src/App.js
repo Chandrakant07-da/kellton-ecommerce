@@ -4,9 +4,12 @@ import {Route,Routes} from 'react-router-dom'
 function App() {
   return (
     <>
-    
+    {/**Routes used to have multilple route options just
+      like nav in html */}
       <Routes>
-        <Route path='/' element={<HomePage />} />
+      {/** path represents the navigation path where it should
+        redirect to which component using element */}
+        <Route path='/home' element={<HomePage />} />
       </Routes>
     </>
   );
