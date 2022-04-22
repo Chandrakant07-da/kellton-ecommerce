@@ -34,13 +34,13 @@ class SignIn extends React.Component{
                                              name='email'
                                              placeholder='Email'
                                              type='email'
-                                             onChange={this.handleChange} />
+                                             handleChange={this.handleChange} />
 
                                         <input
                                              name='password'
                                              placeholder='Password'
                                              type='password'  
-                                             onChange={this.handleChange}
+                                             handleChange={this.handleChange}
                                              />
                                             
                                         <input
