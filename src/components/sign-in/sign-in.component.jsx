@@ -1,59 +1,58 @@
 import React from 'react'
+import CustomButton from '../custom-button/custom-button.component'
+import FormInput from '../form-input/form-input.component'
 import './sign-in.styles.scss'
 
+
 class SignIn extends React.Component{
-    
-     constructor(){
-          super()
-          this.state={
-               email:'',
-               password:''
-          }
-     }
+    constructor(){
+        super()
+        this.state = {
+            email:'',
+            password:''
+        }
+    }
 
-     handleEmail=(event)=>{
-          const {name,value}=event.target
-          this.SetState ({[name]:value})
-         
-     }
+    handleChange = (event) => {
+        const {name,value} = event.target
+        this.setState({[name]:value})
+    }
 
-     handleSubmit=(event)=>{
-          event.preventDefault()
-     }
+   
+
+
     render(){
-     console.log(this.state)
-               return (
-                         
-                              <div className='sign-in'>
-                                   <h2>I already have an account</h2>
-                                   <spna>
-                                        Sign in with your email and password
-                                   </spna>
-                                   <form onSubmit={this.handleSubmit}>
-                                        <input
-                                             name='email'
-                                             placeholder='Email'
-                                             type='email'
-                                             handleChange={this.handleChange} />
+        return (
+            <div className='sign-in'>
+                    <h2>I already have an account </h2>
+                    <span>
+                        Sign in with your email and password
+                    </span>
+                    <form >
+                        
+                        <FormInput 
+                            name='email'
+                            placeholder='Email' 
+                            type='email'
+                            handleChange={this.handleChange}
+                        />
+                        <FormInput  
+                            name='password'
+                            placeholder='Password' 
+                            type='password'
+                            handleChange={this.handleChange}
+                        />
 
-                                        <input
-                                             name='password'
-                                             placeholder='Password'
-                                             type='password'  
-                                             handleChange={this.handleChange}
-                                             />
-                                            
-                                        <input
+                        <CustomButton 
+                            type='submit'
+                        >
+                            Sign In
+                        </CustomButton>
 
-                                             type='submit'
-                                             value='Submit Form' />
-                                   </form>
-                              </div>
-                         
-                         
-                    )
-          }
-    
+                    </form>
+            </div>
+    )
+    }
 }
 
-export default SignIn;
+export default SignIn

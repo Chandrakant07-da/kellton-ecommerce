@@ -1,36 +1,40 @@
 import './header.styles.scss'
 import {Link} from 'react-router-dom'
-import {ReactComponent as Logo} from '../../components/assets/crwns.svg'
-const Header =()=>{
-     return(
-          <>
-               <div className='header'>
-                    { /** logo */}
-                    <Link className='logo-container'
-                        
-                         to='/'>
-                         <Logo className='logo'/>
+import {ReactComponent as Logo} from '../../assets/crwns.svg'
+import CartIcon from '../cart-icon/cart-icon.component'
+
+const Header = () => {
+    return(
+        <>
+            <div className='header'>
+                {/** Logo */}
+                <Link 
+                    className='logo-container'
+                    to='/'>
+                    <Logo className='logo' />
+                </Link> 
+                {/** Options */}
+                <div className='options'>
+                    <Link 
+                        className='option'
+                        to='/shop'>
+                        SHOP
                     </Link>
-                    {/**oPTIONS */}
-                    <div className='options'>
-                         <Link
-                              className='option'
-                              to='/shop'>
-                                   SHOP
-                         </Link>
-                         <Link
-                              className='option'
-                              to='/signin'>
-                                   SIGN IN
-                              </Link>
-                              <Link
-                              className='option'
-                              to='/contact'>
-                                   CONTACT
-                              </Link>
-                    </div>
-               </div>
-          </>
-     )
+                    <Link 
+                        className='option'
+                        to='/signin'>
+                        SIGN IN
+                    </Link>
+                    <Link 
+                        className='option'
+                        to='/contact'>
+                        CONTACT
+                    </Link>
+                    <CartIcon />
+                </div>
+            </div>
+        </>
+    )
 }
-export default Header;
+
+export default Header
